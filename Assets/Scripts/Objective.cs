@@ -1,32 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Objective : LightInteractable
+public class Objective : MonoBehaviour
 {
-    public bool on = false;
-    SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        on = false;
+        
     }
 
-    private void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        sr.color = Color.white;
+        GameController.gameController.LoadNextScene();
     }
 
-    public override Vector3 CalculateLight(Vector3 inDirection, RaycastHit2D hit, ref List<Vector3> positions)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        sr.color = Color.yellow;
-        on = true;
-        return base.CalculateLight(inDirection, hit, ref positions);
+        Debug.Log("test");  
     }
 }

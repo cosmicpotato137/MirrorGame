@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public float jumpHeight = 10;
     public float rotationSpeed = 20;
-
+    public LayerMask pushLayerMask;
     bool moving;
     Vector2 target;
     BlockState currentBlockState;
@@ -114,8 +114,9 @@ public class PlayerController : MonoBehaviour
 
     private BlockState CheckBlock(Vector3 direction)
     {
-        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + direction, direction, 0);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + direction * 2, direction, 0);
+        LayerMask lm = pushLayerMask;
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + direction, direction, 0, lm);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + direction * 2, direction, 0, lm);
 
         if (!hit1)
             return BlockState.Clear;

@@ -16,11 +16,15 @@ public class ReflectiveMaterial : LightInteractable
         
     }
 
-    public override Vector3 CalculateLight(Vector3 inDirection, RaycastHit2D hit, ref List<Vector3> positions)
+    public override void CalculateLight(Vector3 inDirection, RaycastHit2D hit, ref List<List<Vector3>> positions, int depth, LayerMask layerMask)
     {
-        positions.Add(hit.point);
-        positions.Add(hit.point);
-        positions.Add(hit.point);
-        return Vector3.Reflect(inDirection, hit.normal);
+        positions[0].Add(hit.point);
+        positions[0].Add(hit.point);
+        positions[0].Add(hit.point);
+
+        Vector3 newDir = Vector3.Reflect(inDirection, hit.normal);
+        var newhit = CastRay(newDir, hit, layerMask);
+        
+        base.CalculateLight(newDir, newhit, ref positions, depth, layerMask);
     }
 }
