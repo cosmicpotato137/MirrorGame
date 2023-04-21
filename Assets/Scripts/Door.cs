@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     Vector3 up;
     Vector3 down;
+    public bool startOpen = false;
     public float delay = 1;
     float startTime = 0;
 
@@ -16,7 +17,7 @@ public class Door : MonoBehaviour
     {
         up = transform.position + transform.up;
         down = transform.position;
-        open = false;
+        open = startOpen;
     }
 
     // Update is called once per frame

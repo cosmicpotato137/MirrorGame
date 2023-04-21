@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    int currentScene = 0;
+    static int currentScene = 0;
 
     public static GameController gameController;
 
@@ -23,6 +23,14 @@ public class GameController : MonoBehaviour
         gameController = this;
         currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(currentScene);
+        }
     }
 
     public void LoadNextScene()
