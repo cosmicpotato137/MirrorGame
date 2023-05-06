@@ -23,30 +23,26 @@ public class RefractiveMaterial3D : LightInteractable3D
     {
         positions[0].Add(hit.point);
 
-        List<List<Vector3>> reflection = new List<List<Vector3>>();
+        List<List<Vector3>> reflection = CalculateReflection(inDirection, hit, depth, layerMask);
 
-        float ri2;
-        float ri1;
+        // calculate entrance refraction
+        Vector3 newDir = CalculateRefraction(hit, inDirection, 1, refractiveIndex);
 
+        // calculate exit refraction
         RaycastHit testHit;
-        var testb = Physics.Raycast(new Ray(hit.point + hit.normal * .001f, hit.normal), out testHit, Mathf.Infinity, layerMask);
-        if (testb && testHit.collider.gameObject == hit.collider.gameObject)
+        float maxDist = hit.collider.bounds.size.sqrMagnitude;
+        bool n = hit.collider.Raycast(new Ray(hit.point + newDir * maxDist, -newDir), out testHit, Mathf.Infinity);
+        Debug.DrawLine(testHit.point, testHit.point + testHit.normal, Color.blue);
+
+        if (n)
         {
-            ri1 = refractiveIndex;
-            ri2 = 1;
+            positions[0].Add(testHit.point);
+            newDir = CalculateRefraction(testHit, newDir, refractiveIndex, 1, true);
         }
-        else
-        {
-            reflection = CalculateReflection(inDirection, hit, depth, layerMask);
-            ri1 = 1;
-            ri2 = refractiveIndex;
-        }
-        float angle1 = Vector3.Angle(-inDirection, hit.normal);
-        float angle2 = Mathf.Asin(Mathf.Sin(Mathf.Deg2Rad * ri1 * angle1 / ri2)) * Mathf.Rad2Deg;
-        var newDir = Quaternion.AngleAxis(angle2, Vector3.Cross(inDirection, hit.normal)) * -hit.normal;
+
+        // continue ray tracing
         RaycastHit newHit;
         var b = CastRay(newDir, hit, out newHit, layerMask);
-
         if (b)
             base.CalculateLight(newDir, newHit, ref positions, depth + 1, layerMask);
         else
@@ -56,6 +52,14 @@ public class RefractiveMaterial3D : LightInteractable3D
             positions.Add(ray);
     }
 
+    private Vector3 CalculateRefraction(RaycastHit hit, Vector3 inDirection, float ri1, float ri2, bool invertNormal = false)
+    {
+        Vector3 normal = invertNormal ? -hit.normal : hit.normal;
+        float angle1 = Vector3.Angle(-inDirection, normal);
+        float angle2 = Mathf.Asin(Mathf.Sin(Mathf.Deg2Rad * ri1 * angle1 / ri2)) * Mathf.Rad2Deg;
+        return Quaternion.AngleAxis(angle2, Vector3.Cross(inDirection, normal)) * -normal;
+    }
+
     private List<List<Vector3>> CalculateReflection(Vector3 inDirection, RaycastHit hit, int depth, LayerMask layerMask)
     {
         List<List<Vector3>> refPositions = new List<List<Vector3>>();
@@ -63,7 +67,7 @@ public class RefractiveMaterial3D : LightInteractable3D
 
         Vector3 refDir = Vector3.Reflect(inDirection, hit.normal);
         RaycastHit newHit;
-        var b = CastRay(refDir, hit, out newHit, layerMask);
+        bool b = CastRay(refDir, hit, out newHit, layerMask);
 
         if (b)
             base.CalculateLight(refDir, newHit, ref refPositions, depth + 1, layerMask);

@@ -991,6 +991,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upLocation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upDirection.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7540566988445684468, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1226,6 +1234,26 @@ PrefabInstance:
     - target: {fileID: 7540566988445684457, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upLocation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upLocation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upDirection.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upDirection.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upDirection.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540566988445684468, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
       propertyPath: m_RootOrder
@@ -1548,6 +1576,22 @@ PrefabInstance:
     - target: {fileID: 7540566988445684457, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upLocation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upLocation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upDirection.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540566988445684458, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
+      propertyPath: upDirection.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540566988445684468, guid: b7945a232d6047740952251dbd2adf7e, type: 3}
       propertyPath: m_RootOrder

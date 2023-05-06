@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Pushable
   - LightInteractable
+  - Mirror
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - LightInteractable
   - Pushable
   - NotPushable
-  - 
+  - Ground
   - 
   - 
   - 

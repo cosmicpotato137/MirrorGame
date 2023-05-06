@@ -55,7 +55,7 @@ public class LazerPointer3D : LightInteractable3D
         if (h)
             CalculateLight(transform.up, hit, ref positions, 0, layerMask);
         else
-            positions.Add(new List<Vector3>{ transform.up * 1000.0f });
+            positions.Add(new List<Vector3>{ transform.position, transform.up * 1000.0f });
 
         int i = 0;
         foreach (var lr in lineRenderers)
