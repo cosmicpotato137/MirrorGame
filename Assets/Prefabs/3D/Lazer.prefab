@@ -96,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 862a74c6ad36f1b41b2e870f40f3fb05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -193,7 +193,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 862a74c6ad36f1b41b2e870f40f3fb05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -291,7 +291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 862a74c6ad36f1b41b2e870f40f3fb05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -344,5 +344,6 @@ MonoBehaviour:
   lazerMaterial: {fileID: 2100000, guid: 656d3bd0e35eb8a439d4e978cc2f902c, type: 2}
   layerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1025
+  lazerParticles: {fileID: 9085856488750146825, guid: d15513de73e0c7c46b96fce883f8bb87, type: 3}
   on: 1

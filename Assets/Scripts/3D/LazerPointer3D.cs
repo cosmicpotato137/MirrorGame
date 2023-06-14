@@ -11,7 +11,10 @@ public class LazerPointer3D : LightInteractable3D
     public Material lazerMaterial;
     public LayerMask layerMask;
 
+    public GameObject lazerParticles;
+
     List<LineRenderer> lineRenderers;
+    List<GameObject> particleRenderers;
 
     public bool on = false;
 
@@ -44,6 +47,13 @@ public class LazerPointer3D : LightInteractable3D
         }
         for (; i < lrs.Length; i++)
             Destroy(lrs[i].gameObject);
+
+        particleRenderers = new List<GameObject>();
+        for (int j = 0; j < maxSplits; j++)
+        {
+            particleRenderers.Add(Instantiate(lazerParticles, this.transform));
+            particleRenderers[j].name = "particles" + j.ToString();
+        }
     }
 
     // Update is called once per frame
@@ -58,17 +68,27 @@ public class LazerPointer3D : LightInteractable3D
             positions.Add(new List<Vector3>{ transform.position, transform.up * 1000.0f });
 
         int i = 0;
-        foreach (var lr in lineRenderers)
+        for (int j = 0; j < lineRenderers.Count; j++)
         {
             if (i < positions.Count)
             {
                 var line = positions[i];
-                lr.positionCount = line.Count;
-                lr.SetPositions(line.ToArray());
+                lineRenderers[j].positionCount = line.Count;
+                lineRenderers[j].SetPositions(line.ToArray());
+
+                Vector3 a = positions[i][positions[i].Count - 1];
+                Vector3 b = positions[i][positions[i].Count - 2];
+                particleRenderers[j].transform.position = a;
+                float angle = Vector3.Angle(Vector3.Scale(a - b, new Vector3(1, 0, 1)), new Vector3(1, 0, 0));
+                particleRenderers[j].transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+                particleRenderers[j].SetActive(true);
                 i++;
             }
             else
-                lr.positionCount = 0;
+            {
+                lineRenderers[j].positionCount = 0;
+                particleRenderers[j].SetActive(false);
+            }    
         }
     }
 

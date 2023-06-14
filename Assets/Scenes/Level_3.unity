@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3339740566878093457, guid: 1d5db56f249b2ae48a17ab218905add1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3339740566878093463, guid: 1d5db56f249b2ae48a17ab218905add1, type: 3}
       propertyPath: m_Name
       value: LaserPointer
@@ -248,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mirror
       objectReference: {fileID: 0}
+    - target: {fileID: 8133478283901403901, guid: 7953463bff6488844b483943f90c4e75, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8133478283901403902, guid: 7953463bff6488844b483943f90c4e75, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -549,6 +557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5132764720494906608, guid: 93a0056d6e0eb6741bcdb3275a52f075, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5132764720494906615, guid: 93a0056d6e0eb6741bcdb3275a52f075, type: 3}
       propertyPath: m_Size.x
       value: 18
@@ -1495,6 +1507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5865656109435045484, guid: 9d5a22cb44b034c47af356bfd6cade11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5865656109435045485, guid: 9d5a22cb44b034c47af356bfd6cade11, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1604,6 +1620,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4530661680446186536, guid: 89f1b9cd5f912a04d9379de9785dc3f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4530661680446186537, guid: 89f1b9cd5f912a04d9379de9785dc3f8, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1676,5 +1696,9 @@ PrefabInstance:
       propertyPath: numPoints
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4530661681071145710, guid: 89f1b9cd5f912a04d9379de9785dc3f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f1b9cd5f912a04d9379de9785dc3f8, type: 3}

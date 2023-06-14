@@ -16,16 +16,19 @@ public class Button3D : LightInteractable3D
     public UnityEvent onSwitchOff;
 
     Color oldColor;
+    Renderer[] wires;
+
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        wires = GetComponentsInChildren<Renderer>();
+
         on = false;
         stillOn = false;
         if (!on)
-            rend.material = offMat;
+            ChangeMaterials(offMat);
         else
-            rend.material = onMat;
+            ChangeMaterials(onMat);
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class Button3D : LightInteractable3D
         if (!on && stillOn)
         {
             onSwitchOff.Invoke();
-            rend.material = offMat;
+            ChangeMaterials(offMat);
         }
 
         stillOn = on;
@@ -52,8 +55,16 @@ public class Button3D : LightInteractable3D
 
         if (!on)
             onSwitchOn.Invoke();
-        rend.material = onMat;
+        ChangeMaterials(onMat);
         on = true;
         stillOn = true;
+    }
+
+    void ChangeMaterials(Material newMat)
+    {
+        foreach (var rend in wires)
+        {
+            rend.material = newMat;
+        }
     }
 }

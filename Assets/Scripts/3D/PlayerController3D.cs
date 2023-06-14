@@ -9,6 +9,8 @@ public class PlayerController3D : MonoBehaviour
     public float jumpHight;
     public float groundDist;
 
+    public float rotationOffset;
+
     Vector3 runDir;
 
     Rigidbody rb;
@@ -52,7 +54,6 @@ public class PlayerController3D : MonoBehaviour
 
         if (x != 0 || z != 0)
         {
-            float rotationOffset = 0;
             Vector3 newDir = Quaternion.Euler(0, rotationOffset, 0) * Vector3.Normalize(new Vector3(x, 0, z));
             //Debug.DrawLine(transform.position, transform.position + newDir);
 
@@ -83,5 +84,19 @@ public class PlayerController3D : MonoBehaviour
         Debug.DrawLine(origin, origin + direction * groundDist);
         return Physics.Raycast(new Ray(origin, direction), groundDist, LayerMask.GetMask(
             new string[]{ "Ground" }));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+    }
+
+    public void SetRotationOffset(float newOffset)
+    {
+        rotationOffset = newOffset;
     }
 }

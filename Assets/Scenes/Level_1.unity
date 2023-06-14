@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5865656109435045484, guid: 9d5a22cb44b034c47af356bfd6cade11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5865656109435045485, guid: 9d5a22cb44b034c47af356bfd6cade11, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -300,6 +304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5132764720494906608, guid: 93a0056d6e0eb6741bcdb3275a52f075, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 5132764720494906615, guid: 93a0056d6e0eb6741bcdb3275a52f075, type: 3}
       propertyPath: m_Size.x
       value: 18
@@ -866,6 +874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3339740566878093457, guid: 1d5db56f249b2ae48a17ab218905add1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3339740566878093462, guid: 1d5db56f249b2ae48a17ab218905add1, type: 3}
       propertyPath: lazerMaterial
       value: 
@@ -883,10 +895,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6265917468907763718, guid: 09887e9f1e324684ebbff19d4b3c7247, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 7943912032765497957, guid: 09887e9f1e324684ebbff19d4b3c7247, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8133478283901403900, guid: 09887e9f1e324684ebbff19d4b3c7247, type: 3}
       propertyPath: m_Name
       value: DoubleMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 8133478283901403901, guid: 09887e9f1e324684ebbff19d4b3c7247, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8133478283901403902, guid: 09887e9f1e324684ebbff19d4b3c7247, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1035,6 +1059,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1054460356097749779, guid: f606b3f799f2b214a88f30a46ca59ebf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1268769406960162256, guid: f606b3f799f2b214a88f30a46ca59ebf, type: 3}
       propertyPath: m_Name
       value: Objective

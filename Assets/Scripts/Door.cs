@@ -5,6 +5,8 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Vector3 upDirection = Vector3.up;
+    [Range(0, 1.0f)]
+    public float openAmmount;
     Vector3 up;
     Vector3 down;
     public bool startOpen = false;
@@ -16,7 +18,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        up = transform.position + Quaternion.Inverse(transform.rotation) * Vector3.Scale(transform.lossyScale, transform.rotation * Vector3.Normalize(upDirection));
+        up = transform.position + Quaternion.Inverse(transform.rotation) * Vector3.Scale(transform.lossyScale, transform.rotation * (Vector3.Normalize(upDirection) * openAmmount));
         down = transform.position;
         open = startOpen;
     }

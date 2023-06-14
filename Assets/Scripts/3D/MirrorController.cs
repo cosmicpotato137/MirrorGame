@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MirrorController : MonoBehaviour
 {
+    public UnityEvent onPush;
+    public UnityEvent onStop;
+
+    RigidbodyConstraints freeze = 
+        RigidbodyConstraints.FreezePositionX |
+        RigidbodyConstraints.FreezeRotationZ |
+        RigidbodyConstraints.FreezeRotationY;
+
     Rigidbody rb;
+    [HideInInspector]
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotationY;
+        rb.constraints = freeze;
     }
 
     // Update is called once per frame
@@ -20,7 +30,11 @@ public class MirrorController : MonoBehaviour
     }
 
 
-    //private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Mirror"))
@@ -35,6 +49,14 @@ public class MirrorController : MonoBehaviour
                 rb.constraints |= RigidbodyConstraints.FreezePositionX;
             else
                 rb.constraints |= RigidbodyConstraints.FreezePositionZ;
+
+            if (other.CompareTag("Player"))
+            {
+                SetLayer("Outline");
+            }
+
+            if (other.CompareTag("Player") && rb.velocity != Vector3.zero)
+                onPush.Invoke();
         }
     }
 
@@ -43,7 +65,23 @@ public class MirrorController : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Mirror"))
         {
             rb.velocity = Vector3.zero;
-            rb.constraints = RigidbodyConstraints.FreezeRotation;
+            rb.constraints = freeze;
+
+            if (other.CompareTag("Player"))
+            {
+                SetLayer("Default");
+                onStop.Invoke();
+            }
+        }
+    }
+
+    void SetLayer(string layer)
+    {
+        Transform[] children = GetComponentsInChildren<Transform>();
+        foreach (var child in children)
+        {
+            if (child != this.transform && child.name != "Colliders")
+                child.gameObject.layer = LayerMask.NameToLayer(layer);
         }
     }
 }

@@ -1386,6 +1386,14 @@ PrefabInstance:
       propertyPath: m_Lens.OrthographicSize
       value: 28.9
       objectReference: {fileID: 0}
+    - target: {fileID: 4574241800859308038, guid: c8d78de9024b26c4ea69f114b011a806, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+    - target: {fileID: 6838520654851214805, guid: c8d78de9024b26c4ea69f114b011a806, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d78de9024b26c4ea69f114b011a806, type: 3}
 --- !u!1 &1284800263
@@ -2204,6 +2212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272826934}
     m_Modifications:
+    - target: {fileID: 95540508349353836, guid: fe782042eb84fa944af71e54f690d23f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 2904964003464057663, guid: fe782042eb84fa944af71e54f690d23f, type: 3}
       propertyPath: width
       value: 0.3
@@ -2212,6 +2224,10 @@ PrefabInstance:
       propertyPath: layerMask.m_Bits
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 3028167188421913974, guid: fe782042eb84fa944af71e54f690d23f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 3355986451048064800, guid: fe782042eb84fa944af71e54f690d23f, type: 3}
       propertyPath: m_Name
       value: Lazer
@@ -2260,5 +2276,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8019696713070063211, guid: fe782042eb84fa944af71e54f690d23f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe782042eb84fa944af71e54f690d23f, type: 3}

@@ -31,6 +31,11 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(currentScene);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void LoadNextScene()
